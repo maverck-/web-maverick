@@ -11,7 +11,7 @@
     <div class="flex items-center justify-center mt-6 text-sm">
       <UButton
         label="All Articles &rarr;"
-        to="/articles"
+        to="/articulos"
         variant="link"
         color="gray"
       />
@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 const { data: articles } = await useAsyncData("articles-home", () =>
-  queryContent("/articles")
+  queryContent("/articulos")
     .sort({ published: -1 })
     .limit(3)
     .only(["title", "description", "published", "slug", "_path"])

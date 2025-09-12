@@ -1,28 +1,21 @@
 <template>
   <div>
     <h2 class="uppercase text-xs font-semibold text-gray-400 mb-6">
-      FEATURED PROEJCTS
+      Proyectos
     </h2>
     <div class="space-y-4">
-      <AppProjectCard
-        v-for="(project, id) in projects"
-        :key="id"
-        :project="project"
-      />
+      <AppProjectCard v-for="(project, id) in projects" :key="id" :project="project" />
     </div>
-    <div class="flex items-center justify-center mt-6 text-sm">
-      <UButton
-        label="All Projects &rarr;"
-        to="/projects"
-        variant="link"
-        color="gray"
-      />
+    <div class="flex items-stretch justify-between mt-6 text-sm">
+      <UButton label="Portafolio" icon="i-heroicons-folder-open" size="md" to="/proyectos" variant="link"
+        :trailing="true" color="gray" />
+      <UButton label="Ver más &rarr;" to="/proyectos" variant="link" color="gray" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 const { data: projects } = await useAsyncData("projects-home", () =>
-  queryContent("/projects").limit(3).find()
+  queryContent("/proyectos").limit(3).find()
 );
 </script>

@@ -44,25 +44,24 @@ const { styles } = useFixedHeader(headerRef);
 const items = [
   { name: "Home", path: "/", icon: "solar:home-smile-outline" },
   {
-    name: "Projects",
-    path: "/projects",
+    name: "Experiencia",
+    path: "/experiencia",
+    icon: "solar:suitcase-outline",
+  }, 
+  {
+    name: "Educación",
+    path: "/educacion",
+    icon: "solar:square-academic-cap-outline",
+  },
+  {
+    name: "Proyectos",
+    path: "/proyectos",
     icon: "solar:folder-with-files-outline",
   },
   {
-    name: "Articles",
-    path: "/articles",
+    name: "Artículos",
+    path: "/articulos",
     icon: "solar:document-add-outline",
-  },
-  { name: "Lab", path: "/lab", icon: "heroicons:beaker" },
-  {
-    name: "What's in my bag?",
-    path: "/whats-in-my-bag",
-    icon: "solar:backpack-outline",
-  },
-  {
-    name: "Bookmarks",
-    path: "/bookmarks",
-    icon: "solar:bookmark-linear",
-  },
+  }
 ];
 </script>

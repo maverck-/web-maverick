@@ -1,8 +1,6 @@
 <template>
-  <footer
-    class="max-w-2xl mx-auto text-gray-400 dark:text-gray-600 text-sm text-center pb-8"
-  >
+  <footer class="max-w-2xl mx-auto text-gray-400 dark:text-gray-600 text-sm text-center pb-8">
     <br>
-    <p>© 2023 Fayaz Ahmed. All rights reserved.</p>
+    <p>© 2024 Maverick Gayoso. <span class="desktop-only"> Todos los derechos reservados.</span></p>
   </footer>
 </template>

@@ -15,6 +15,10 @@ module.exports = {
         zoopdark:
           "rgba(10, 10, 10, 0.2) 0px 1.2672px 1.2672px 0px, rgba(10, 10, 10, 0.2) 0px 5.06879px 10.1376px 0px",
       },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+        'slidein500': 'slidein 1s ease 500ms'
+      }
     },
     fontFamily: {
       sans: [
@@ -47,5 +51,7 @@ module.exports = {
       ],
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography")
+  ],
 } satisfies Config;

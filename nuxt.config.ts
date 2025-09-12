@@ -1,5 +1,10 @@
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+    timeline: {
+      enabled: true,
+    }
+  },
   modules: [
     "@nuxt/ui",
     "nuxt-icon",
@@ -8,7 +13,8 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/content",
     "@nuxthq/studio",
-    "@vueuse/nuxt"
+    "@vueuse/nuxt",
+    "@nuxtjs/device"
   ],
   ui: {
     icons: ["heroicons", "lucide"],
@@ -17,12 +23,19 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
     head: {
       htmlAttrs: {
-        lang: "en",
+        lang: "es",
         class: "h-full",
       },
       bodyAttrs: {
-        class: "antialiased bg-gray-50 dark:bg-black min-h-screen",
+        class: "antialiased bg-white dark:bg-black min-h-screen",
       },
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/avatar.png'
+        }
+      ]
     },
   },
   content: {
