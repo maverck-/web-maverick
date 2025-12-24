@@ -1,24 +1,25 @@
 export default defineNuxtConfig({
+  compatibilityDate: '2024-12-24',
+  future: {
+    compatibilityVersion: 4
+  },
   devtools: {
     enabled: true,
-    timeline: {
-      enabled: true,
-    }
   },
   modules: [
     "@nuxt/ui",
-    "nuxt-icon",
+    "@nuxt/icon",
     "@nuxtjs/google-fonts",
     "@nuxtjs/fontaine",
     "@nuxt/image",
     "@nuxt/content",
     "@nuxthq/studio",
-    "@vueuse/nuxt",
     "@nuxtjs/device"
   ],
-  ui: {
-    icons: ["heroicons", "lucide"],
+  icon: {
+    serverBundle: 'auto',
   },
+  css: ['~/assets/css/main.css'],
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
@@ -39,9 +40,13 @@ export default defineNuxtConfig({
     },
   },
   content: {
-    highlight: {
-      theme: "github-dark",
-    },
+    build: {
+      markdown: {
+        highlight: {
+          theme: "github-dark",
+        },
+      }
+    }
   },
   googleFonts: {
     display: "swap",

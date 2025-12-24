@@ -1,6 +1,6 @@
 <template>
   <main class="min-h-screen">
-    <AppHeader class="mb-12" title="Proyectos" :description="description" />
+    <AppHeader class="mb-12" title="Experiencia" :description="description" />
     <div class="space-y-4">
       <AppExperienceCard v-for="(exp, id) in experiencia" :key="id" :exp="exp" />
     </div>
@@ -9,13 +9,13 @@
 
 <script setup>
 const description =
-  "I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved.";
+  "I've worked on tons of little projects over the years but these are the ones that I'm most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved.";
 useSeoMeta({
-  title: "Proyectos | Maverick Gayoso",
+  title: "Experiencia | Maverick Gayoso",
   description,
 });
 
 const { data: experiencia } = await useAsyncData("experiencia-all", () =>
-  queryContent("/experiencia").find()
+  queryCollection('experiencia').all()
 );
 </script>

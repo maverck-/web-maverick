@@ -8,14 +8,14 @@
     </div>
     <div class="flex items-stretch justify-between mt-6 text-sm">
       <UButton label="Portafolio" icon="i-heroicons-folder-open" size="md" to="/proyectos" variant="link"
-        :trailing="true" color="gray" />
-      <UButton label="Ver más &rarr;" to="/proyectos" variant="link" color="gray" />
+        :trailing="true" color="neutral" />
+      <UButton label="Ver más &rarr;" to="/proyectos" variant="link" color="neutral" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 const { data: projects } = await useAsyncData("projects-home", () =>
-  queryContent("/proyectos").limit(3).find()
+  queryCollection('proyectos').limit(3).all()
 );
 </script>

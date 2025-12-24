@@ -11,7 +11,7 @@
           <UAvatar
             :src="getThumbnail(bookmark.url)"
             :alt="bookmark.label"
-            :ui="{ rounded: 'rounded-md' }"
+            class="rounded-md"
           />
           <p class="truncate text-gray-700 dark:text-gray-200">
             {{ bookmark.label }}

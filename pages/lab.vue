@@ -2,19 +2,9 @@
   <main class="min-h-screen">
     <AppHeader class="mb-12" title="Lab" :description="description" />
     <div class="space-y-24">
-      <ContentList path="/lab" v-slot="{ list }">
-        <ContentQuery
-          v-for="item in list"
-          :key="item._path"
-          :path="item._path"
-          find="one"
-          v-slot="{ data }"
-        >
-          <ContentRenderer>
-            <ContentRendererMarkdown :value="data" />
-          </ContentRenderer>
-        </ContentQuery>
-      </ContentList>
+      <div v-for="item in labItems" :key="item.path">
+        <ContentRenderer :value="item" />
+      </div>
     </div>
   </main>
 </template>
@@ -25,4 +15,8 @@ useSeoMeta({
   title: "Lab | Maverick Gayoso",
   description,
 });
+
+const { data: labItems } = await useAsyncData("lab-all", () =>
+  queryCollection('lab').all()
+);
 </script>

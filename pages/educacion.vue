@@ -13,6 +13,6 @@ useSeoMeta({
 });
 
 const { data: experiencia } = await useAsyncData("experiencia-all", () =>
-  queryContent("/experiencia").find()
+  queryCollection('experiencia').all()
 );
 </script>

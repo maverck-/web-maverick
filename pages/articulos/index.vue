@@ -18,6 +18,6 @@ useSeoMeta({
 });
 
 const { data: articles } = await useAsyncData("all-articles", () =>
-  queryContent("/articulos").sort({ published: -1 }).find()
+  queryCollection('articulos').order('published', 'DESC').all()
 );
 </script>

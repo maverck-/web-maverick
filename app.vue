@@ -1,14 +1,16 @@
 <template>
-  <NuxtLoadingIndicator color="#14b8a6" />
-  <AppGridBackground />
-  <AppNavbar />
-  <div class="h-32"></div>
-  <UContainer>
-    <NuxtPage />
-  </UContainer>
-  <div class="h-28"></div>
-  <AppFooter />
-  <UNotifications />
+  <UApp :tooltip="{ delayDuration: 0 }">
+    <NuxtLoadingIndicator color="#14b8a6" />
+    <AppGridBackground />
+    <AppNavbar />
+    <div class="h-32"></div>
+    <main class="mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+      <NuxtPage />
+    </main>
+    <div class="h-28"></div>
+    <AppFooter />
+    <UToaster />
+  </UApp>
 </template>
 
 <style>

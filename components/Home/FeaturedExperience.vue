@@ -49,14 +49,14 @@
 
     <div class="flex items-stretch justify-between mt-6 text-sm">
       <UButton class="text-gray-700 dark:text-gray-300 dark:bg-gray-800/50 dark:hover:text-gray-50 hover:dark:bg-gray-800" label="Descargar CV"
-        icon="i-heroicons-chevron-down" size="lg" to="/proyectos" variant="soft" color="gray" :trailing="true" />
-      <UButton label="Ver más &rarr;" to="/proyectos" variant="link" color="gray" />
+        icon="i-heroicons-chevron-down" size="lg" to="/proyectos" variant="soft" color="neutral" :trailing="true" />
+      <UButton label="Ver más &rarr;" to="/proyectos" variant="link" color="neutral" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 const { data: experiencia } = await useAsyncData("experiencia-home", () =>
-  queryContent("/experiencia").limit(3).find()
+  queryCollection('experiencia').limit(3).all()
 );
 </script>
